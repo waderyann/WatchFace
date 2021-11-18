@@ -66,6 +66,33 @@ void draw(){
     line(width/2, height/2, mx, my);
     line(width/2, height/2, hx, hy);
     
+    fill(255);
+    PFont font;
+    font = loadFont("font.vlw");
+    textFont(font);
+    textSize(40);
+    String ampm;
+    if (myHour > 12){
+      ampm = "pm";
+    }else{
+      ampm = "am";
+    }
+    
+    String Min = "0";
+    if ((Minute < 10)&&(Minute > 0)){
+      Min = "0";
+    }else if(Minute == 0){
+      Min = "00";
+    }else{
+      Min = "";
+    }
+    
+    fill(255);
+    noStroke();
+    fill(0);
+    ellipse(width/2, height/2+200, 250, 90);
+    fill(255);
+    text(Hour + ":" + Min + Minute + ampm, width/2 - 70, height/2 + 200); 
   }
 }
 
